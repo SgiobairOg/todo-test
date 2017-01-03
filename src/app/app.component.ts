@@ -27,6 +27,7 @@ export class AppComponent {
   }
 
   get todos() {
+    console.log("Component");
     return this.todoDataService.getAllTodos();
   }
 

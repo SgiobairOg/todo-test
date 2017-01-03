@@ -39,7 +39,8 @@ export class TodoDataService {
   }
 
   //Simulate GET /todos
-  getAllTodos(): Todo[] {
+  getAllTodos() {
+    console.log("Getting");
     return this.todos;
   }
 
@@ -51,10 +52,9 @@ export class TodoDataService {
   }
 
   toggleTodoComplete(todo: Todo) {
-    let updatedTodo = this.updateTodoById(todo.id, {
+    return this.updateTodoById(todo.id, {
       complete: !todo.complete
     });
-    return updatedTodo;
   }
 
 }
