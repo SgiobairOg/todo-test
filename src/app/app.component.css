@@ -79,19 +79,19 @@
   display: flex;
   justify-content: left;
   align-items: center;
+  position: relative;
 }
 .inbox li:last-child {
   border-radius: 0 0 5px 5px;
 }
-.inbox li *:nth-child(2) {
+.inbox li div:nth-child(2) {
   flex-grow: 2;
+  padding: 15px;
+}
+.inbox li div:nth-child(2) * {
   font-family: sans-serif;
   font-size: 14px;
   font-weight: 200;
-  padding: 15px;
-  border: 0;
-  border-left: 1px solid rgba(56,189,232,0.70);;
-  height: 100%;
 }
 .inbox input {
   border: 0;
@@ -99,13 +99,61 @@
   margin: 0 !important;
 }
 .toggle {
-  margin: 15px !important;
+  min-width: 25px;
+  min-height: 25px;
+  padding: 15px;
+  border: 0;
+  border-right: 1px solid rgba(56,189,232,0.70);;
+  height: 100%;
+}
+.toggle input[type="checkbox"] {
+  display:none;
+}
+.toggle input[type="checkbox"] + label span {
+  display:inline-block;
+  width:25px;
+  height:25px;
+  margin:0;
+  vertical-align:middle;
+  cursor:pointer;
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+.toggle input[type="checkbox"]:checked + label span {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+.destroy {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+}
+
+.inbox li:hover .destroy {
+  display: block;
+}
+.inbox li:hover .destroy::after {
+  content: "×";
+}
+li.completed p {
+  text-decoration: line-through;
 }
 .todo-count {
-  margin: 15px 5px;
+  margin: 15px 70px;
   font-size: 14px;
+  opacity: .6;
   font-weight: 200;
   font-style: italic;
+}
+.new-todo {
+  width: 100%;
 }
 .inbox::before {
   content: ' ';

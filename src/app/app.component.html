@@ -6,12 +6,15 @@
   </div>
   <ul class="inbox">
     <li>
-      <input class="toggle" type="checkbox" disabled aria-disabled="true">
+      <div class="toggle"></div>
       <div><input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()"></div>
     </li>
     <li *ngFor="let todo of todos" [class.completed]="todo.complete">
-      <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-      <p>{{todo.title}}</p>
+      <div class="toggle">
+        <input id="todo.id" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+        <label for="todo.id"><span></span></label>
+      </div>
+      <div><p>{{todo.title}}</p></div>
       <button class="destroy" (click)="removeTodo(todo)"></button>
     </li>
     <li *ngIf="todos.length > 0">
