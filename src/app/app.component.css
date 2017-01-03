@@ -1,7 +1,6 @@
 .notepad {
   padding: 15px 10px;
   margin: 30px;
-  min-height: 80vh;
   min-width: 60vh;
   background-color: rgba(216,45,26,1.0);
   background-clip: border-box;
@@ -146,8 +145,8 @@ li.completed p {
   text-decoration: line-through;
 }
 .todo-count {
-  margin: 15px 70px;
-  font-size: 14px;
+  margin: 15px 20px;
+  font-size: 10px;
   opacity: .6;
   font-weight: 200;
   font-style: italic;

@@ -11,8 +11,8 @@
     </li>
     <li *ngFor="let todo of todos" [class.completed]="todo.complete">
       <div class="toggle">
-        <input id="todo.id" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-        <label for="todo.id"><span></span></label>
+        <input id="check{{todo.id}}" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+        <label for="check{{todo.id}}"><span></span></label>
       </div>
       <div><p>{{todo.title}}</p></div>
       <button class="destroy" (click)="removeTodo(todo)"></button>
